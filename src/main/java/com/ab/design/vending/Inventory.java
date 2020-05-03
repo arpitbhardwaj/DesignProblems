@@ -13,7 +13,11 @@ import java.util.Map;
 public class Inventory<E> {
     private Map<E, Integer> inventoryMap = new HashMap<>();
 
-    public void addItem(E item, int quantity){
+    public void put(E item, int quantity){
+        inventoryMap.put(item,quantity);
+    }
+
+    public void add(E item){
         if(hasItem(item)){
             int count = inventoryMap.get(item);
             inventoryMap.put(item,count + 1);
@@ -21,15 +25,14 @@ public class Inventory<E> {
             inventoryMap.put(item,1);
         }
     }
-
-    public void deductItem(E item){
+    public void deduct(E item){
         if(hasItem(item)){
             int count = inventoryMap.get(item);
             inventoryMap.put(item,count - 1);
         }
     }
 
-    private boolean hasItem(E item) {
+    public boolean hasItem(E item) {
         return getItemQuantity(item) > 0;
     }
 

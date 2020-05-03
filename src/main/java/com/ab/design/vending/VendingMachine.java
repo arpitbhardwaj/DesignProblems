@@ -12,13 +12,35 @@ import java.util.List;
  *  Allow reset operation for vending machine supplier.
  */
 public class VendingMachine implements VendingMachineState {
+    private Inventory<Currency> currencyInventory = new Inventory<>();
+    private Inventory<Item> itemInventory = new Inventory<>();
+
+    private long currentBalance;
+
+    public VendingMachine() {
+        //initialize machine with 5 coins of each denomination
+        for (Currency currency:
+             Currency.values()) {
+            currencyInventory.put(currency, 5);
+        }
+        //initialize machine with 5 quantity of each item
+        for (Item item:
+             Item.values()) {
+            itemInventory.put(item,5);
+        }
+    }
+
     @Override
     public void insertCurrency(Currency coin) {
-
+        currentBalance += coin.getDenomination();
+        currencyInventory.add(coin);
     }
 
     @Override
     public long selectItem(Item item) {
+        if (itemInventory.hasItem(item)){
+            itemInventory.deduct(item);
+        }
         return 0;
     }
 
