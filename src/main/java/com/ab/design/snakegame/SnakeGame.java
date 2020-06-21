@@ -25,9 +25,9 @@ public class SnakeGame {
         Cell initPos = new Cell(0,0);
         Snake snake = new Snake(initPos);
         Board board = new Board(10,10);
-        SnakeGame game = new SnakeGame(snake,board);
+        SnakeGame newGame = new SnakeGame(snake,board);
 
-        game.gameOver = false;
+        newGame.gameOver = false;
 
     }
 }

@@ -29,6 +29,10 @@ public class Board {
     }
 
     public void generateFood(){
-
+        System.out.println("Generating Food...");
+        int x = (int) (Math.random() * rowCount);
+        int y = (int) (Math.random() * colCount);
+        board[x][y].setType(CellType.FOOD);
+        System.out.println("Food Generated at : " + x + " " + y);
     }
 }

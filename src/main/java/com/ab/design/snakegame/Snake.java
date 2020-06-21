@@ -17,13 +17,24 @@ public class Snake {
     }
 
     public void grow(){
-
+        snakeList.add(snakeHead);
     }
 
     public void move(Cell nextCell){
-
+        System.out.println("Snake is moving to : " + nextCell.getX() + " " + nextCell.getY());
+        Cell tail = snakeList.remove(snakeList.size());
+        tail.setType(CellType.EMPTY);
+        snakeHead = nextCell;
+        snakeList.add(snakeHead);
     }
-    public boolean checkCrash(){
+    public boolean checkCrash(Cell nextCell){
+        System.out.println("Checking Crash...");
+        for (Cell cell:
+             snakeList) {
+            if (cell == nextCell){
+                return true;
+            }
+        }
         return false;
     }
 
