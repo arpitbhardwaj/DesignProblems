@@ -6,6 +6,10 @@ package com.ab.design.principles;
  * The Dependency Inversion Principle (DIP) states that high-level modules should not depend upon low-level modules
  * instead they should depend on abstractions.
  *
+ * Class A provides only private constructors will require you to choose composition instead of inheriting from class A
+ *
+ * composition instead of inheritance When you would like to simulate multiple inheritance
+ *
  */
 public class DependencyInversion {
     //Reader and Writer interfaces that are abstractions
