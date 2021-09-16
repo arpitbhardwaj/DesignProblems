@@ -7,7 +7,7 @@ package com.ab.design.creationalpatterns.builder;
  *
  * 1.The client calls a constructor (or static factory) with all the required parameters and gets a builder object.
  * 2.The client calls setter like methods to set each optional parameter of interest.
- * 3.Finally the client calls the build method to generate the object which is immutable.
+ * 3.Finally, the client calls the build method to generate the object which is immutable.
  */
 
 
@@ -22,7 +22,7 @@ public class LunchOrderBuilderDemo {
         System.out.println(lunchOrderBuilder);
 
         builder.meat("turkey");
-        System.out.println(builder.build());
+        System.out.println(builder.build()); //this call returns a new object different from previous one
 
         System.out.println(lunchOrderBuilder.getBread());
         System.out.println(lunchOrderBuilder.getCondiments());

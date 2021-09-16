@@ -1,7 +1,11 @@
 package com.ab.design.creationalpatterns.builder;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ * due to setters the produced object from this bean pattern is mutable
+ */
 public class LunchOrderBean {
-    //due to setters the produced object from this bean pattern is immutable
 
     private String bread;
     private String condiments;

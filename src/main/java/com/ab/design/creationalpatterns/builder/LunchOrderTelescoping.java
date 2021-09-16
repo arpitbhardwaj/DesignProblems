@@ -1,7 +1,7 @@
 package com.ab.design.creationalpatterns.builder;
 
 public class LunchOrderTelescoping {
-    //the produced object from this telescoping pattern is mutable but have limited constructive nature
+
     private String bread;
     private String condiments;
     private String dressing;

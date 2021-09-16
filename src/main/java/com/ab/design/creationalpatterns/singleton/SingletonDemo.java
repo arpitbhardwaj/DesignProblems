@@ -1,5 +1,9 @@
 package com.ab.design.creationalpatterns.singleton;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ */
 public class SingletonDemo {
     public static void main(String[] args) {
         Runtime singletonRuntime = Runtime.getRuntime();

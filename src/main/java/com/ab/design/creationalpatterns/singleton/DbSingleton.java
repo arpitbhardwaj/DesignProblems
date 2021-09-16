@@ -1,5 +1,13 @@
 package com.ab.design.creationalpatterns.singleton;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ *  Double-checked locking design pattern
+ *      reduces the number of lock acquisitions by simply checking the locking condition beforehand
+ *
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,6 +15,7 @@ import java.sql.SQLException;
 public class DbSingleton {
     private DbSingleton() {
         /*
+        //fix derby dependency in pom, then uncomment below this code
         try {
             DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
         } catch (SQLException e) {

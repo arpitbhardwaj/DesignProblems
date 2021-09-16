@@ -14,7 +14,7 @@ public class LunchOrderBuilder {
         this.meat = builder.meat;
     }
 
-    public static class Builder{
+    static class Builder{
         private String bread;
         private String condiments;
         private String dressing;

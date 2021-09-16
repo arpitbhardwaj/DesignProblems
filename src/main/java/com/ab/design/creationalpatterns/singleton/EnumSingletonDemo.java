@@ -8,6 +8,6 @@ public class EnumSingletonDemo {
         EnumSingleton instance = EnumSingleton.INSTANCE;
 
         instance.setValue(2);
-        System.out.println(instance.toString());
+        System.out.println(instance);
     }
 }

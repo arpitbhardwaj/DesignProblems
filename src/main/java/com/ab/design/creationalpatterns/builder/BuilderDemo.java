@@ -9,7 +9,7 @@ package com.ab.design.creationalpatterns.builder;
  *
  * StringBuilder and Build Pattern are not same, instead the String Builder append method uses kinde of builder functionality implicitlt
  * StringBuilder class can be used when you want to modify a string without creating a new object.
- * Hence Stringbuilder instance are immutable
+ * Hence, Stringbuilder instance are mutable
  */
 public class BuilderDemo {
 
@@ -20,6 +20,6 @@ public class BuilderDemo {
         builder.append("it has methods to append");
         builder.append(" almost anything we want to string ");
         builder.append(42);
-        System.out.println(builder.toString());
+        System.out.println(builder);
     }
 }

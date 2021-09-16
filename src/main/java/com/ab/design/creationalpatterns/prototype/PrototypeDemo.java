@@ -18,13 +18,11 @@ public class PrototypeDemo {
         String sql = "Select * from movies where title = ?";
         List<String> parameters = new ArrayList<String>();
         parameters.add("Star Wars");
-        Record record = new Record();
 
-        Statement statement = new Statement(sql,parameters,record);
+        Statement statement = new Statement(sql,parameters);
 
         System.out.println(statement.getSql());
         System.out.println(statement.getParameters());
-        System.out.println(statement.getRecord());
 
         Statement anotherStatement = statement.clone();
         //shallow copy
@@ -32,7 +30,6 @@ public class PrototypeDemo {
 
         System.out.println(anotherStatement.getSql());
         System.out.println(anotherStatement.getParameters());
-        System.out.println(anotherStatement.getRecord());
     }
 
 }

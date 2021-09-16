@@ -2,6 +2,8 @@ package com.ab.design.creationalpatterns.singleton;
 
 /**
  * @author Arpit Bhardwaj
+ *
+ * The constructor is by default private in enum
  */
 public enum EnumSingleton {
     INSTANCE;
