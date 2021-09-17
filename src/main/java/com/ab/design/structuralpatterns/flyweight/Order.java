@@ -12,6 +12,6 @@ public class Order {
     }
 
     void processOder(){
-        System.out.println("Ordering " + this.item + "for order number " + this.orderNumber);
+        System.out.println("Ordering " + this.item + " for order number " + this.orderNumber);
     }
 }

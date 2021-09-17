@@ -29,8 +29,8 @@ public class WorkerMementoDemo {
         System.out.println("Worker after changed number" + worker);
         worker.setPhone("767676767");
         caretaker.revert(worker);
-        System.out.println("Revet to last save point" + worker);
+        System.out.println("Revert to last save point" + worker);
         caretaker.revert(worker);
-        System.out.println("Revet to original" + worker);
+        System.out.println("Revert to original" + worker);
     }
 }

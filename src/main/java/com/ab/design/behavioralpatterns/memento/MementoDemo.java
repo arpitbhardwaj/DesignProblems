@@ -25,21 +25,18 @@ public class MementoDemo {
 
     private static Employee desarialize() throws IOException, ClassNotFoundException {
         Employee employee = null;
-        FileInputStream fileInputStream = new FileInputStream("/tmp/employee.ser");
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-
-        employee = (Employee) objectInputStream.readObject();
-        objectInputStream.close();
-        fileInputStream.close();
+        try (FileInputStream fileInputStream = new FileInputStream("/tmp/employee.ser");
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);){
+            employee = (Employee) objectInputStream.readObject();
+        }
         return  employee;
     }
 
     private static void serialize(Employee employee) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("/tmp/employee.ser");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        try(FileOutputStream fileOutputStream = new FileOutputStream("/tmp/employee.ser");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);) {
+            objectOutputStream.writeObject(employee);
+        }
 
-        objectOutputStream.writeObject(employee);
-        objectOutputStream.close();
-        fileOutputStream.close();
     }
 }

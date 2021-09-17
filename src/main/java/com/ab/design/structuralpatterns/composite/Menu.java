@@ -1,7 +1,11 @@
 package com.ab.design.structuralpatterns.composite;
 
 import java.util.Iterator;
-//Act as composite class
+/**
+ * @author Arpit Bhardwaj
+ *
+ * Composite – Composite stores' child components and implements child related operations in the component interface.
+ */
 public class Menu extends MenuComponent {
 
     public Menu(String name,String url) {

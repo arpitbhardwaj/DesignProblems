@@ -4,15 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
 /**
  * @author Arpit Bhardwaj
  *
- *  Allows to decouple an abstraction from its implementation so that the two can vary independently
+ * Allows to decouple an abstraction from its implementation so that the two can vary independently
  *
  * Bridge design pattern solve:
- *      An abstraction and its implementation should be defined and extended independently from each other.
+ *      An abstraction and its implementation should be defined and extended independently of each other.
  *      A compile-time binding between an abstraction and its implementation should be avoided so that an implementation can be selected at run-time.
  */
 public class BridgeDemo {

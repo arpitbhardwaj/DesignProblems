@@ -10,15 +10,12 @@ public class WorkflowApprovalCORDemo {
         vp.setSuccessor(ceo);
 
         Request request1 = new Request(RequestType.CONFERENCE, 100);
-
         director.handleRequest(request1);
 
         Request request2 = new Request(RequestType.PURCHASE, 1200);
-
         director.handleRequest(request2);
 
         Request request3 = new Request(RequestType.PURCHASE, 1600);
-
         director.handleRequest(request3);
     }
 }

@@ -5,8 +5,7 @@ public class SwitchLightCommandDemo {
         Light light = new Light();//Receiver
         Switch aSwitch = new Switch();//invoker
 
-        Command command = new onCommand(light);
+        Command command = new onCommand(light);//implementation of functional interface
         aSwitch.storeAndExecute(command);
-
     }
 }
