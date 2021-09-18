@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class DbSingleton {
     private DbSingleton() {
-        /*try {
+        try {
             DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
         } catch (SQLException e) {
             e.printStackTrace();
-        }*/
+        }
         if (conn != null){
             throw new RuntimeException("Use getConnection() method to create");
         }
