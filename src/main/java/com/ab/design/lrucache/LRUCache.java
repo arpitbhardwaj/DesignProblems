@@ -57,11 +57,13 @@ public class LRUCache {
     }
 
     private LRUNode remove(int key) {
-        //remove from hash
-        cache.remove(key);
         //unlink from DLL
         LRUNode node = cache.get(key);
         unlink(node);
+
+        //remove from hash
+        cache.remove(key);
+
         //return to reuse
         return node;
     }
@@ -102,14 +104,23 @@ public class LRUCache {
     }
 
     public static void main(String[] args) {
-        LRUCache cache = new LRUCache(2);
+        LRUCache cache = new LRUCache(3);
         cache.set(2,"Raju");
         cache.print();
+
         cache.set(1,"Shyam");
         cache.print();
+
         System.out.println(cache.get(2));
         cache.print();
+
         cache.set(4, "Meena");
+        cache.print();
+
+        System.out.println(cache.get(2));
+        cache.print();
+
+        cache.set(5, "Tina");
         cache.print();
     }
 }
