@@ -19,6 +19,11 @@
             <artifactId>derbyclient</artifactId>
             <version>10.10.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
