@@ -8,12 +8,12 @@ import java.util.*;
  * insert(x),remove(x),getRandom(),search(x)
  * use hashing to support first 3 operations and ArrayList together with hashing to support 4th
  */
-public class SpecialDataStructure<T> {
+public class RandomizedDataStructure<T> {
 
     private ArrayList<T> arr;//to store elements
     private HashMap<T,Integer> hash;//keys are array elements and values are indexes
 
-    public SpecialDataStructure() {
+    public RandomizedDataStructure() {
         this.arr = new ArrayList<>();
         this.hash = new HashMap<>();
     }
@@ -54,7 +54,7 @@ public class SpecialDataStructure<T> {
     }
 
     public static void main(String[] args) {
-        SpecialDataStructure<Integer> specialDS = new SpecialDataStructure<>();
+        RandomizedDataStructure<Integer> specialDS = new RandomizedDataStructure<>();
         specialDS.insert(20);
         specialDS.insert(10);
         specialDS.insert(40);
