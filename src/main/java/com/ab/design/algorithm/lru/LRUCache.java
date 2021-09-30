@@ -20,7 +20,7 @@ public class LRUCache {
     }
 
     public String get(int key) {
-        LRUNode node = this.cache.get(key);
+        LRUNode node = cache.get(key);
         if (node != null) {
             moveToHead(node);
             return node.value;
