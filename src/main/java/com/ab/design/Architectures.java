@@ -1,4 +1,4 @@
-package com.ab.design.architectures;
+package com.ab.design;
 
 /**
  * @author Arpit Bhardwaj
