@@ -30,4 +30,20 @@ package com.ab.design;
  *      https://medium.com/@saurav200892/how-to-achieve-idempotency-in-post-method-d88d7b08fcdd
  *      Make POST request idempotent using Idempotency-key
  *
+ *
+ * Status Codes
+ *      1xx: Informational  – Communicates transfer protocol-level information.
+ *      2xx: Success        – client’s request was accepted successfully.
+ *          200 OK
+ *          201 CREATED
+ *          204 NO CONTENT
+ *      3xx: Redirection    – client must take some additional action in order to complete their request.
+ *      4xx: Client Error   – client takes responsibility for these error status codes.
+ *          400 BAD REQUEST
+ *          401 UNAUTHORIZED
+ *          403 FORBIDDEN
+ *          404 NOT FOUND
+ *          405 METHOD NOT ALLOWED
+ *      5xx: Server Error   – server takes responsibility for these error status codes.
+ *          500 INTERNAL SERVER ERROR
  */
