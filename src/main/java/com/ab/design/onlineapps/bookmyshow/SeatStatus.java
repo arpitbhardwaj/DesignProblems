@@ -1,4 +1,4 @@
-package com.ab.design.booking;
+package com.ab.design.onlineapps.bookmyshow;
 
 /**
  * @author Arpit Bhardwaj

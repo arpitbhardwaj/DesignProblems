@@ -1,4 +1,4 @@
-package com.ab.design.algorithm.leakybucket;
+package com.ab.design.algorithm;
 
 /**
  * @author Arpit Bhardwaj

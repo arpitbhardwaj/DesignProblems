@@ -40,5 +40,5 @@ package com.ab.design;
  * Types of Transaction
  *      Flat and Nested Transaction
  *      Distributed and Non-Distributed Transaction
- *      
+ *
  */

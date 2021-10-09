@@ -10,9 +10,15 @@ package com.ab.design;
  *      Isolation:    the execution of transactions concurrently will result in a state that is equivalent to a state achieved these were executed serially in some order.
  *      Durability:   once a transaction is committed to the database, it is permanently preserved through the use of backups and transaction logs.
  *
- * NoSQL Databases
+ * NoSQL (Not only SQL) Databases
  *      developed on BASE Principles
  *      Basic Availability:     Guarantees the availability of the data . There will be a response to any request
  *      Soft State:             The state of the system could change over time.
  *      Eventually Consistency: The system will eventually become consistent once it stops receiving input.
+ *
+ * Types of NoSQL Databases.
+ *      Key-Value Store     -   Amazon S3
+ *      Column Based Store  -   Cassandra   -   Provides AP from CAP Theorem    -   implemented using java
+ *      Document Based Store-   MongoDB     -   Provides CP from CAP Theorem    -   implemented using c++
+ *      Graph Based Store   -   Neo4J
  */

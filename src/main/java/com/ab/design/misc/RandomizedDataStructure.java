@@ -10,47 +10,49 @@ import java.util.*;
  */
 public class RandomizedDataStructure<T> {
 
-    private ArrayList<T> arr;//to store elements
-    private HashMap<T,Integer> hash;//keys are array elements and values are indexes
+    private List<T> list;//to store elements
+    private Map<T,Integer> map;//keys are elements and values are indexes
 
     public RandomizedDataStructure() {
-        this.arr = new ArrayList<>();
-        this.hash = new HashMap<>();
+        this.list = new ArrayList<>();
+        this.map = new HashMap<>();
     }
 
-    void insert(T x){
-        if (hash.containsKey(x)){
-            return;
+    public boolean insert(T x){
+        if (map.containsKey(x)){
+            return false;
         }
-        int index = arr.size();
-        arr.add(x);
-        hash.put(x,index);
+        int index = list.size();
+        list.add(x);
+        map.put(x,index);
+        return true;
     }
 
-    void remove(T x){
-        Integer index = hash.get(x);
-        if (index == null){
-            return;
+    public boolean remove(T x){
+        if(!map.containsKey(x)){
+            return false;
         }
-        hash.remove(x);
-        int lastIndex = arr.size() - 1;
-        T lastElement = arr.get(lastIndex);
-        Collections.swap(arr,index, lastIndex);
-        arr.remove(lastIndex);
-        hash.put(lastElement,index);
+        int n = list.size();
+        int swapIndex = map.get(x);
+        Collections.swap(list,swapIndex,n-1);
+        T swapItem = list.get(swapIndex);
+        map.put(swapItem,swapIndex);
+        list.remove(n-1);
+        map.remove(x);
+        return true;
     }
 
-    int search(T x){
-        if (!hash.containsKey(x)){
+    public int search(T x){
+        if (!map.containsKey(x)){
             return -1;
         }
-        return hash.get(x);
+        return map.get(x);
     }
 
-    T getRandom(){
+    public T getRandom(){
         Random random = new Random();
-        int index = random.nextInt(arr.size());
-        return arr.get(index);
+        int index = random.nextInt(list.size());
+        return list.get(index);
     }
 
     public static void main(String[] args) {

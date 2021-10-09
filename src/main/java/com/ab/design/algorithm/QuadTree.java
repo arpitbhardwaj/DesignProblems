@@ -1,4 +1,4 @@
-package com.ab.design.algorithm.quadtree;
+package com.ab.design.algorithm;
 
 /**
  * @author Arpit Bhardwaj
