@@ -7,7 +7,10 @@ public class Board {
     private Spot[][] board;
 
     public Board() {
-        //intialize the whole board
+        initialize();
+    }
+
+    public void initialize(){
         //initialize white pieces
         board[0][3] = new Spot(0, 1, new King(true));
         board[0][4] = new Spot(0, 2, new Queen(true));

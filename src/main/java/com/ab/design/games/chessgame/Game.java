@@ -3,7 +3,7 @@ package com.ab.design.games.chessgame;
 /**
  * @author Arpit Bhardwaj
  */
-public class ChessGame {
+public class Game {
 
     private Player[] players;
     private Board board;
@@ -11,7 +11,7 @@ public class ChessGame {
     //private GameStatus status;
 
 
-    public ChessGame(Player p1, Player p2) {
+    public Game(Player p1, Player p2) {
         players[0] = p1;
         players[0] = p2;
         board = new Board();
