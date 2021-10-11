@@ -4,13 +4,13 @@ package com.ab.design.parkinglot;
  * @author Arpit Bhardwaj
  */
 public abstract class ParkingSpot {
-    private ParkingSpotType spotType;
+    private ParkingSpotType type;
     private String number;
     private Vehicle vehicle;
     private boolean free;
 
     public ParkingSpot(ParkingSpotType spotType) {
-        this.spotType = spotType;
+        this.type = spotType;
     }
 
     public boolean removeVehicle() {
@@ -27,12 +27,18 @@ public abstract class ParkingSpot {
 
     protected abstract boolean isFree();
 
+    public ParkingSpotType getType() {
+        return type;
+    }
+
+    public String getNumber() {
+        return number;
+    }
 }
 
-class HandicappedSpot extends ParkingSpot{
-
-    public HandicappedSpot() {
-        super(ParkingSpotType.HANDICAPPED);
+class CompactSpot extends ParkingSpot {
+    public CompactSpot() {
+        super(ParkingSpotType.COMPACT);
     }
 
     @Override
@@ -41,9 +47,9 @@ class HandicappedSpot extends ParkingSpot{
     }
 }
 
-class ElectricSpot extends ParkingSpot{
-    public ElectricSpot() {
-        super(ParkingSpotType.ELECTRIC);
+class LargeSpot extends ParkingSpot {
+    public LargeSpot() {
+        super(ParkingSpotType.LARGE);
     }
 
     @Override
@@ -51,5 +57,3 @@ class ElectricSpot extends ParkingSpot{
         return false;
     }
 }
-
-//similar other implementation

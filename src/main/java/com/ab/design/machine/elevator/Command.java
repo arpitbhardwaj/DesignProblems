@@ -6,12 +6,12 @@ import java.util.logging.Logger;
  * @author Arpit Bhardwaj
  */
 public abstract class Command {
-    private Lift lift;
+    private ElevatorCar elevatorCar;
     private boolean isExternal = false;
     private static final Logger log = Logger.getLogger(Command.class.getName());
 
-    public Command(Lift lift, boolean isExternal) {
-        this.lift = lift;
+    public Command(ElevatorCar elevatorCar, boolean isExternal) {
+        this.elevatorCar = elevatorCar;
         this.isExternal = isExternal;
     }
 
@@ -25,7 +25,7 @@ public abstract class Command {
 
 
     protected boolean isUnsupportedOperation(){
-        if (isExternal && lift.isUnderMaintenance()){
+        if (isExternal && elevatorCar.isUnderMaintenance()){
             log.info("Currently Under Maintenance");
             return true;
         }

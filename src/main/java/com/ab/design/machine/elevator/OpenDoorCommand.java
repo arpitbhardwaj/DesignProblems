@@ -4,17 +4,17 @@ package com.ab.design.machine.elevator;
  * @author Arpit Bhardwaj
  */
 public class OpenDoorCommand extends Command{
-    Lift lift;
+    ElevatorCar elevatorCar;
 
-    public OpenDoorCommand(Lift lift, boolean isExternal) {
-        super(lift, isExternal);
-        this.lift = lift;
+    public OpenDoorCommand(ElevatorCar elevatorCar, boolean isExternal) {
+        super(elevatorCar, isExternal);
+        this.elevatorCar = elevatorCar;
     }
 
     @Override
     protected void doExecute() {
-        if (!lift.isDoorOpen()){
-            lift.openDoor();
+        if (!elevatorCar.isDoorOpen()){
+            elevatorCar.openDoor();
         }
     }
 }

@@ -5,17 +5,17 @@ package com.ab.design.machine.elevator;
  */
 public class CloseDoorCommand extends Command{
 
-    Lift lift;
+    ElevatorCar elevatorCar;
 
-    public CloseDoorCommand(Lift lift, boolean isExternal) {
-        super(lift, isExternal);
-        this.lift = lift;
+    public CloseDoorCommand(ElevatorCar elevatorCar, boolean isExternal) {
+        super(elevatorCar, isExternal);
+        this.elevatorCar = elevatorCar;
     }
 
     @Override
     protected void doExecute() {
-        if (!lift.isDoorClosed()){
-            lift.closeDoor();
+        if (!elevatorCar.isDoorClosed()){
+            elevatorCar.closeDoor();
         }
     }
 }
