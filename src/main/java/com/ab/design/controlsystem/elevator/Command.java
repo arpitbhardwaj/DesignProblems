@@ -1,4 +1,4 @@
-package com.ab.design.machine.elevator;
+package com.ab.design.controlsystem.elevator;
 
 import java.util.logging.Logger;
 

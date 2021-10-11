@@ -1,4 +1,4 @@
-package com.ab.design.machine.elevator;
+package com.ab.design.controlsystem.elevator;
 
 /**
  * @author Arpit Bhardwaj

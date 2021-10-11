@@ -1,4 +1,4 @@
-package com.ab.design.parkinglot;
+package com.ab.design.controlsystem.parkinglot;
 
 public class Classes {
 }
