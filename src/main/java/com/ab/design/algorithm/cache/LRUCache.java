@@ -1,10 +1,10 @@
-package com.ab.design.algorithm.lru;
+package com.ab.design.algorithm.cache;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-class LeetCodeLRUCache {
+class LRUCache {
     class Pair{
         int key;
         int value;
@@ -24,7 +24,7 @@ class LeetCodeLRUCache {
     LinkedList<Pair> ageList;
     Map<Integer,Pair> cache;
     int capacity;
-    public LeetCodeLRUCache(int capacity) {
+    public LRUCache(int capacity) {
         this.ageList = new LinkedList<>();//dll
         this.cache = new HashMap<>(capacity);
         this.capacity = capacity;
@@ -58,7 +58,7 @@ class LeetCodeLRUCache {
     }
 
     public static void main(String[] args) {
-        LeetCodeLRUCache lRUCache = new LeetCodeLRUCache(2);
+        LRUCache lRUCache = new LRUCache(2);
         lRUCache.put(1, 1);                     // cache is {1=1}
         lRUCache.put(2, 2);                     // cache is {1=1, 2=2}
         System.out.println(lRUCache.get(1));    // return 1
