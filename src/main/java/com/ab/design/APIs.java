@@ -19,7 +19,6 @@ package com.ab.design;
  *          Visibility, reliability and scalability
  *          The REST API is always independent of the type of platform or languages
  *
- *
  * Idempotent:
  *      An idempotent HTTP method is an HTTP method that can be called multiple times without different outcomes.
  *      Idempotency is important in building a fault-tolerant API.

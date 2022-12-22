@@ -1,4 +1,4 @@
-package com.ab.design.algorithm;
+package com.ab.design.algorithm.ratelimiting;
 
 /**
  * @author Arpit Bhardwaj

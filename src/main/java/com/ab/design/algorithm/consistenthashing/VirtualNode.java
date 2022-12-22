@@ -1,5 +1,10 @@
 package com.ab.design.algorithm.consistenthashing;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ * copy/clone/replica of ServerNode
+ */
 public class VirtualNode<T extends Node> implements Node {
     final T physicalNode;
     final int replicaIndex;

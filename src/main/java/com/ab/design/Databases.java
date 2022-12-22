@@ -17,8 +17,8 @@ package com.ab.design;
  *      Eventually Consistency: The system will eventually become consistent once it stops receiving input.
  *
  * Types of NoSQL Databases.
- *      Key-Value Store     -   Amazon S3
- *      Column Based Store  -   Cassandra   -   Provides AP from CAP Theorem    -   implemented using java
- *      Document Based Store-   MongoDB     -   Provides CP from CAP Theorem    -   implemented using c++
- *      Graph Based Store   -   Neo4J
+ *      Key-Value           -   Amazon S3
+ *      Column Based        -   Cassandra   -   Provides AP from CAP Theorem    -   implemented using java
+ *      Document Based      -   MongoDB     -   Provides CP from CAP Theorem    -   implemented using c++
+ *      Graph Based         -   Neo4J
  */

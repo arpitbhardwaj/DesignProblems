@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ * Least Recently Used (LRU) is a caching algorithm
+ * in which the least recently used cache block is removed whenever the cache is overflowed.
+ */
 class LRUCache {
     class Pair{
         int key;

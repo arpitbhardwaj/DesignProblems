@@ -3,17 +3,22 @@ package com.ab.design.algorithm.consistenthashing;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MD5Hash implements HashFunction{
+/**
+ * @author Arpit Bhardwaj
+ *
+ */
+public class MD5HashFunction {
+
     MessageDigest instance;
 
-    public MD5Hash() {
+    public MD5HashFunction() {
         try {
             instance = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
+            System.out.println("Exception occurred: " + e.getMessage());
         }
     }
 
-    @Override
     public long hash(String key) {
         instance.reset();
         instance.update(key.getBytes());
