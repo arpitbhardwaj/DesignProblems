@@ -1,9 +1,6 @@
 package com.ab.design.algorithm.consistenthashing;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author Arpit Bhardwaj
@@ -13,39 +10,40 @@ public class HashRing<T extends Node>{
     private MD5HashFunction hashFunction;
     private SortedMap<Long, VirtualNode<T>> ring ;
 
-    public HashRing(Collection<T> pNodes, int vNodeCount) {
+    public HashRing(Collection<T> nodes, int replicaCount) {
         this.ring = new TreeMap<>();
         this.hashFunction = new MD5HashFunction();
-        if (pNodes != null) {
-            for (T pNode : pNodes) {
-                addNode(pNode, vNodeCount);
+        if (nodes != null) {
+            for (T node : nodes) {
+                addNode(node, replicaCount);
             }
         }
     }
 
-    //add physic node to the hash ring with some virtual nodes
-    public void addNode(T pNode, int vNodeCount) {
-        if (vNodeCount < 0) throw new IllegalArgumentException("illegal virtual node counts :" + vNodeCount);
-        int existingReplicas = getExistingReplicas(pNode);
-        for (int i = 0; i < vNodeCount; i++) {
-            VirtualNode<T> vNode = new VirtualNode<>(pNode, i + existingReplicas);
+    //add physic node replicas to the hash ring
+    public void addNode(T node, int replicaCount) {
+        for (int i = 0; i < replicaCount; i++) {
+            VirtualNode<T> vNode = new VirtualNode<>(node, i);
             ring.put(hashFunction.hash(vNode.getKey()), vNode);
         }
     }
 
     //remove the physical node from the hash ring
-    public void removeNode(T pNode) {
+    public void removeNode(T node) {
+        //rehash the keys mapped to this node to the first node towards clock wise
+        //TODO
+        //remove the node
         Iterator<Long> it = ring.keySet().iterator();
         while (it.hasNext()) {
             Long key = it.next();
             VirtualNode<T> virtualNode = ring.get(key);
-            if (virtualNode.isVirtualNodeOf(pNode)) {
+            if (virtualNode.isVirtualNodeOf(node)) {
                 it.remove();
             }
         }
     }
 
-    //with a specified key, route the nearest server node instance in the hash ring
+    //map the specified key to the nearest server node instance in the hash ring
     public T addKey(String key) {
         if (!ring.isEmpty()) {
             Long hashVal = hashFunction.hash(key);
@@ -56,13 +54,10 @@ public class HashRing<T extends Node>{
         return null;
     }
 
-    public int getExistingReplicas(T pNode) {
-        int replicas = 0;
-        for (VirtualNode<T> vNode : ring.values()) {
-            if (vNode.isVirtualNodeOf(pNode)) {
-                replicas++;
-            }
+    public void print() {
+        System.out.println("-------------Printing Hash Ring------------");
+        for (Map.Entry<Long, VirtualNode<T>> entry: ring.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
         }
-        return replicas;
     }
 }

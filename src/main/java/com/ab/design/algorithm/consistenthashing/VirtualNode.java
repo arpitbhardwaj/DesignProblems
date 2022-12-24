@@ -10,8 +10,8 @@ public class VirtualNode<T extends Node> implements Node {
     final int replicaIndex;
 
     public VirtualNode(T physicalNode, int replicaIndex) {
-        this.replicaIndex = replicaIndex;
         this.physicalNode = physicalNode;
+        this.replicaIndex = replicaIndex;
     }
 
     @Override
@@ -19,12 +19,16 @@ public class VirtualNode<T extends Node> implements Node {
         return physicalNode.getKey() + "-" + replicaIndex;
     }
 
-    public boolean isVirtualNodeOf(T pNode) {
-        return physicalNode.getKey().equals(pNode.getKey());
+    public boolean isVirtualNodeOf(T vNode) {
+        return physicalNode.getKey().equals(vNode.getKey());
     }
 
     public T getPhysicalNode() {
         return physicalNode;
     }
 
+    @Override
+    public String toString() {
+        return getKey();
+    }
 }

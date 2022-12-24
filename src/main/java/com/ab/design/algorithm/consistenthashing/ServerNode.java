@@ -9,8 +9,8 @@ import java.util.Arrays;
  */
 public class ServerNode implements Node{
 
-    private final String ip;
     private final String name;
+    private final String ip;
     private final int port;
 
     public ServerNode(String name, String ip, int port) {
@@ -21,7 +21,7 @@ public class ServerNode implements Node{
 
     @Override
     public String getKey() {
-        return name + "-"+ip+":"+port;
+        return name + "-" + ip + ":" + port;
     }
 
     @Override
