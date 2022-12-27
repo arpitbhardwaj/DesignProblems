@@ -17,8 +17,6 @@ package com.ab.design;
  *      For ex. status update notification to friends
  *          when a person updates the status(trigger condition) the it run a function on AWS lambda to send notication to friend list.
  *
- *
- *
  * Disadvantages of Monolithic Application
  *      very large and complex to understand.
  *      larger the application, the longer the start‑up time is.

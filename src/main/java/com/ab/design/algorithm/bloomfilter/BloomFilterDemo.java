@@ -4,6 +4,7 @@ import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author Arpit Bhardwaj
@@ -16,23 +17,23 @@ import java.nio.charset.Charset;
  * Bit array of size N
  * h number of hash functions
  *
- * Time complexity: O(H), where H is the number of hash functions used
+ * Time complexity: O(h), where h is the number of hash functions used
  * Space complexity: 159 Mb (For 40 million data sets)
- * Case of False positive: 1 mistake per 10 million (for H = 23)
+ * Case of False positive: 1 mistake per 10 million (for h = 23)
  *
  * Use case
- *      to build web crawlers
+ *      to implement URL Seen component in  web crawler
  */
 public class BloomFilterDemo {
     public static void main(String[] args) {
-        BloomFilter<String> blackListedIps = BloomFilter
-                .create(Funnels.stringFunnel(Charset.forName("UTF-8")),10000);
+        BloomFilter<String> urlSeen = BloomFilter
+                .create(Funnels.stringFunnel(StandardCharsets.UTF_8),10000);
 
-        blackListedIps.put("192.170.0.1");
-        blackListedIps.put("75.245.10.1");
-        blackListedIps.put("10.125.22.20");
+        urlSeen.put("https://www.wikipedia.org/");
+        urlSeen.put("https://www.google.com/");
+        urlSeen.put("https://www.linkedin.com/");
 
-        System.out.println(blackListedIps.mightContain("75.245.10.1"));
-        System.out.println(blackListedIps.mightContain("101.125.20.22"));
+        System.out.println(urlSeen.mightContain("https://www.linkedin.com/"));
+        System.out.println(urlSeen.mightContain("https://www.facebook.com/"));
     }
 }
