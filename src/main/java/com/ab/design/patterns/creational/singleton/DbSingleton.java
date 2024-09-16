@@ -13,7 +13,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbSingleton {
-    private DbSingleton() {
+    //commenting due to new laptop driver file missing
+    /*private DbSingleton() {
         try {
             DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
         } catch (SQLException e) {
@@ -26,7 +27,7 @@ public class DbSingleton {
         if (instance != null){
             throw new RuntimeException("Use getInstance() method to create");
         }
-    }
+    }*/
     /*private static DbSingleton instance = new DbSingleton();
     public static DbSingleton getInstance(){
         return instance;
